@@ -69,7 +69,13 @@ node default {
   include ruby::2_0_0
 
   include iterm2::stable
-  include sublimetext2
+
+  class { 'sublime-text2':
+    user => 'nicolamoretto',
+    source => 'http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg',
+    cmdLine => true,
+    plugins => ["GitGutter"]
+  }
 
   # common, useful packages
   package {
