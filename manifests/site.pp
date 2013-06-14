@@ -69,6 +69,7 @@ node default {
   include ruby::2_0_0
 
   include iterm2::stable
+  include ohmyzsh
 
   class { 'sublime-text2':
     user => 'nicolamoretto',
@@ -89,5 +90,18 @@ node default {
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
     target => $boxen::config::repodir
+  }
+
+  file { "/Users/nicolamoretto/.zshrc":
+    mode => 644,
+    owner => 'nicolamoretto',
+    group => staff,
+    source => "/opt/boxen/repo/.zshrc"
+  }
+  exec { "chsh -s $(which zsh)":
+    logoutput => true,
+    subscribe => File["/Users/nicolamoretto/.zshrc"],
+    refreshonly => true,
+    user => $luser
   }
 }
