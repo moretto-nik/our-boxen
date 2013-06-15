@@ -98,6 +98,9 @@ node default {
     group => staff,
     source => "/opt/boxen/repo/.zshrc"
   }
+
+  exec { "git config --global color.ui true":
+  }
   #exec { "chsh -s $(which zsh)":
   #  logoutput => true,
   #  subscribe => File["/Users/nicolamoretto/.zshrc"],
