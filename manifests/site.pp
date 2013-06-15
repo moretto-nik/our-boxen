@@ -75,7 +75,7 @@ node default {
     user => 'nicolamoretto',
     source => 'http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg',
     cmdLine => true,
-    plugins => ["GitGutter"]
+    plugins => []
   }
 
   # common, useful packages
@@ -98,10 +98,10 @@ node default {
     group => staff,
     source => "/opt/boxen/repo/.zshrc"
   }
-  exec { "chsh -s $(which zsh)":
-    logoutput => true,
-    subscribe => File["/Users/nicolamoretto/.zshrc"],
-    refreshonly => true,
-    user => $luser
-  }
+  #exec { "chsh -s $(which zsh)":
+  #  logoutput => true,
+  #  subscribe => File["/Users/nicolamoretto/.zshrc"],
+  #  refreshonly => true,
+  #  user => $luser
+  #}
 }
