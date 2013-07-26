@@ -1,0 +1,9 @@
+[submodule "modules/sublime-text2"]
+	path = modules/sublime-text2
+	url = git@github.com:moretto-nik/puppet-sublime-text2.git
+[submodule "modules/iterm2"]
+	path = modules/iterm2
+	url = git@github.com:boxen/puppet-iterm2.git
+[submodule "modules/ohmyzsh"]
+	path = modules/ohmyzsh
+	url = git@github.com:samjsharpe/puppet-ohmyzsh.git
