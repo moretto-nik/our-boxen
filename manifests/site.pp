@@ -101,6 +101,8 @@ node default {
 
   exec { "git config --global color.ui true":
   }
+
+  exec {"curl https://raw.github.com/gcapizzi/vimpeppers/master/bootstrap.sh -L -o - | sh":}
   #exec { "chsh -s $(which zsh)":
   #  logoutput => true,
   #  subscribe => File["/Users/nicolamoretto/.zshrc"],
